@@ -4,6 +4,14 @@ title:  "Welcome to Jekyll!"
 date:   2026-01-16 15:09:41 +0800
 categories: jekyll update
 ---
+本篇就是典型的'post'即‘帖子’，帖子以markdown格式进行更新，都放在'_post'文件夹下面，并且在自动构建的过程中，帖子内容会被自动加载。
+
+Jekyll支持Markdown等多种格式文件博客，只需要在文件前填写好头信息，在建立过程中就可以自动转换成HTML格式的文件。
+
+Jekyll很注重博客内容，即博客就是Jekyll框架的核心。
+
+目前关于Jekyll博客内容还有两点不解的内容：模板和插件。
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 Jekyll requires blog post files to be named according to the following format:
