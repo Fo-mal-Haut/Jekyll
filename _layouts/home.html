@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<div class="home">
+  <header class="hero">
+    <h1 class="hero-title">{{ site.title | escape }}</h1>
+    <p class="hero-subtitle">{{ site.description | escape }}</p>
+  </header>
+
+  <section class="posts-section">
+    <div class="posts-grid">
+      {%- for post in site.posts -%}
+      <article class="post-card">
+        {%- if post.image -%}
+        <div class="post-card-image">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+        </div>
+        {%- endif -%}
+        <div class="post-card-content">
+          <div class="post-card-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: site.date_format }}
+            </time>
+            {%- if post.categories.size > 0 -%}
+            <span class="post-card-category">{{ post.categories | first }}</span>
+            {%- endif -%}
+          </div>
+          <h2 class="post-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+          {%- if post.excerpt -%}
+          <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+          {%- endif -%}
+          <a href="{{ post.url | relative_url }}" class="post-card-link">
+            <span>Read more</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+      {%- endfor -%}
+    </div>
+  </section>
+</div>
